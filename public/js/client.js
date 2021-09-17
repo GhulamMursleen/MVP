@@ -13,9 +13,10 @@ socket.on('message', (msg) => {
     bell.classList.add('addRedColor')
     let mainDiv = document.createElement('a')
     mainDiv.classList.add('dropdown-item')
-    mainDiv.href = '/policy'
+    mainDiv.href = '/pendingpolicy'
     markup = ` <span>New policy added</span>`
     mainDiv.innerHTML = markup
     notificationList.appendChild(mainDiv)
+    //send email to all employees with policy name
   }
 })

@@ -24,6 +24,8 @@ const createPolicy = async (req, res) => {
       name: req.body.name,
       description: req.body.description,
       category: req.body.category,
+      enddate:req.body.enddate,
+      startdate:Date.now(),
       file_url:
         url.format({
           protocol: req.protocol,
@@ -46,6 +48,7 @@ const createPolicy = async (req, res) => {
     let result = await policy.create({ ...obj })
     let cat = await category.find().lean()
     let plc = await policy.find().lean()
+    //send email function call 
     let a = await socket.sockets.emit('message', { type: 'policy'})
     res.render('policy.ejs', {
       data: {
