@@ -91,6 +91,9 @@ const getUsers = async (req, res) => {
                     var password = "Qwop@1405";
                     var transporter = nodemailer.createTransport({
                       service: "gmail",
+                      host: 'smtp.gmail.com',
+                      port: 465,
+                      secure: true,
                       auth: {
                         user: email,
                         pass: password,
