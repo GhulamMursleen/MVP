@@ -23,6 +23,9 @@ const createDepartment = async (req, res) => {
       var password = "Qwop@1405";
       var transporter = nodemailer.createTransport({
         service: "gmail",
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
         auth: {
           user: email,
           pass: password,
@@ -118,6 +121,9 @@ const updatedepartment = async (req, res) => {
         });
         var transporter = nodemailer.createTransport({
           service: "gmail",
+          host: 'smtp.gmail.com',
+          port: 465,
+          secure: true,
           auth: {
             user: email,
             pass: password,
