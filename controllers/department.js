@@ -26,11 +26,9 @@ const createDepartment = async (req, res) => {
       await UserDetail.findOneAndUpdate({'email':data.email},{'role':'Manager'}, {
         returnOriginal: false
       })
-<<<<<<< HEAD
       const oAuth2Client=new google.auth.OAuth2(CLIENT_ID,CLIENT_SECRET,REDIRECT_URI)
       oAuth2Client.setCredentials({refresh_token:REFRESH_TOKEN})
       const accessToken=await oAuth2Client.getAccessToken()
-=======
       var email = "mycontextsquad2@gmail.com";
       var password = "Qwop@1405";
       var transporter = nodemailer.createTransport({
