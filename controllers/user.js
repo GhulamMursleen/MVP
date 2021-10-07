@@ -95,10 +95,25 @@ const getUsers = async (req, res) => {
                    var useremail=docs.email
                     let users = await UserDetail.find().lean()
     
+<<<<<<< HEAD
                     const oAuth2Client=new google.auth.OAuth2(CLIENT_ID,CLIENT_SECRET,REDIRECT_URI)
                     oAuth2Client.setCredentials({refresh_token:REFRESH_TOKEN})
                     const accessToken=await oAuth2Client.getAccessToken()
                                   
+=======
+                    var email = "mycontextsquad2@gmail.com";
+                    var password = "Qwop@1405";
+                    var transporter = nodemailer.createTransport({
+                      service: "gmail",
+                      host: 'smtp.gmail.com',
+                      port: 465,
+                      secure: true,
+                      auth: {
+                        user: email,
+                        pass: password,
+                      },
+                    });
+>>>>>>> 5ad482e552a0489909acc83f3ebc32d2c648c22f
                     var transporter = nodemailer.createTransport({
                       service: "gmail",
                       auth: {

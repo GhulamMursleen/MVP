@@ -26,9 +26,24 @@ const createDepartment = async (req, res) => {
       await UserDetail.findOneAndUpdate({'email':data.email},{'role':'Manager'}, {
         returnOriginal: false
       })
+<<<<<<< HEAD
       const oAuth2Client=new google.auth.OAuth2(CLIENT_ID,CLIENT_SECRET,REDIRECT_URI)
       oAuth2Client.setCredentials({refresh_token:REFRESH_TOKEN})
       const accessToken=await oAuth2Client.getAccessToken()
+=======
+      var email = "mycontextsquad2@gmail.com";
+      var password = "Qwop@1405";
+      var transporter = nodemailer.createTransport({
+        service: "gmail",
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true,
+        auth: {
+          user: email,
+          pass: password,
+        },
+      });
+>>>>>>> 5ad482e552a0489909acc83f3ebc32d2c648c22f
       var transporter = nodemailer.createTransport({
         service: "gmail",
         auth: {
@@ -117,6 +132,7 @@ const updatedepartment = async (req, res) => {
       oAuth2Client.setCredentials({refresh_token:REFRESH_TOKEN})
       const accessToken=await oAuth2Client.getAccessToken()
         var transporter = nodemailer.createTransport({
+<<<<<<< HEAD
                       service: "gmail",
                       auth: {
                         type:'OAuth2',
@@ -126,6 +142,16 @@ const updatedepartment = async (req, res) => {
                         refreshToken:REFRESH_TOKEN,
                         accessToken:accessToken
                       },
+=======
+          service: "gmail",
+          host: 'smtp.gmail.com',
+          port: 465,
+          secure: true,
+          auth: {
+            user: email,
+            pass: password,
+          },
+>>>>>>> 5ad482e552a0489909acc83f3ebc32d2c648c22f
         });
         var mailOptions = {
           from: 'cspmsgroup@gmail.com',

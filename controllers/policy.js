@@ -70,6 +70,7 @@ const createPolicy = async (req, res) => {
         const accessToken=await oAuth2Client.getAccessToken()
         var transporter = nodemailer.createTransport({
           service: "gmail",
+<<<<<<< HEAD
         auth: {
           type:'OAuth2',
           user: 'cspmsgroup@gmail.com',
@@ -78,6 +79,15 @@ const createPolicy = async (req, res) => {
           refreshToken:REFRESH_TOKEN,
           accessToken:accessToken
         },
+=======
+          host: 'smtp.gmail.com',
+          port: 465,
+          secure: true,
+          auth: {
+            user: email,
+            pass: password,
+          },
+>>>>>>> 5ad482e552a0489909acc83f3ebc32d2c648c22f
         });
         for (var i = 0; i < result.length; i++) { 
           console.log(result[i]['email']);
